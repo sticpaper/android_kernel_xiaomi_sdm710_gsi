@@ -462,7 +462,6 @@ struct goodix_ts_core {
 	struct notifier_block ts_notifier;
 	struct goodix_ts_esd ts_esd;
 
-	struct proc_dir_entry *tp_selftest_proc;
 	struct proc_dir_entry *tp_data_dump_proc;
 	struct proc_dir_entry *tp_fw_version_proc;
 	struct proc_dir_entry *tp_lockdown_info_proc;
@@ -802,12 +801,6 @@ int goodix_gesture_enable(bool enable);
 int goodix_check_gesture_stat(bool enable);
 
 int goodix_get_lockdowninfo(struct goodix_ts_core *ts_core);
-extern int sync_read_rawdata(unsigned int reg,
-		unsigned char *data, unsigned int len);
-
-extern int goodix_tools_register(void);
-
-extern int goodix_tools_unregister(void);
 
 extern struct goodix_ts_core *goodix_core_data;
 
